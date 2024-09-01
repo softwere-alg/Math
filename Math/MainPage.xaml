@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Math.MainPage">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="StartBtn"
+                Grid.Row="0"
+                Text="Start" 
+                SemanticProperties.Hint="Start Benchmark"
+                Clicked="OnStartClicked"
+                HorizontalOptions="Center" />
+
+            <ListView x:Name="ResultList" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0"
+                                    Text="{Binding Calc}"
+                                    FontAttributes="Bold" />
+                                <Label Grid.Column="2"
+                                    Text="{Binding Time}"
+                                    VerticalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <BoxView x:Name="WaitBack" IsVisible="False" Color="Gray" Opacity="0.8" />
+        <ActivityIndicator x:Name="WaitIndicator" IsVisible="False" IsRunning="true" Scale="4" />
+    </Grid>
+
+</ContentPage>
