@@ -7,7 +7,9 @@
 * **C**:複素数のベクトル
 * r:実数（スカラー）
 
-| | MathNet [ms] | Accelerate [ms] |
+iPhoneSE2を使用して計測しています。
+
+| | Math.Net [ms] | Accelerate [ms] |
 | ---- | :---: | :---: |
 | **R** + **R** | 13 | 8 |
 | **R** + r | 8 | 8 |
