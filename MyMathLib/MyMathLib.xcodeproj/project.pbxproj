@@ -11,6 +11,15 @@
 		321C4A812C82D33500B9BB81 /* MyMathLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C4A802C82D33500B9BB81 /* MyMathLibTests.swift */; };
 		321C4A822C82D33500B9BB81 /* MyMathLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 321C4A762C82D33500B9BB81 /* MyMathLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		321C4A8C2C82D54B00B9BB81 /* vDSPWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C4A8B2C82D54B00B9BB81 /* vDSPWrapper.m */; };
+		326055132C872003004DC00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326055122C872003004DC00F /* AppDelegate.swift */; };
+		326055152C872003004DC00F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326055142C872003004DC00F /* SceneDelegate.swift */; };
+		326055172C872003004DC00F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326055162C872003004DC00F /* ViewController.swift */; };
+		3260551A2C872003004DC00F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 326055192C872003004DC00F /* Base */; };
+		3260551C2C872005004DC00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3260551B2C872005004DC00F /* Assets.xcassets */; };
+		3260551F2C872005004DC00F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3260551E2C872005004DC00F /* Base */; };
+		326055412C87204A004DC00F /* MyMathLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321C4A732C82D33500B9BB81 /* MyMathLib.framework */; };
+		326055422C87204A004DC00F /* MyMathLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 321C4A732C82D33500B9BB81 /* MyMathLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		326055472C8722C8004DC00F /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326055462C8722C8004DC00F /* Benchmark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,7 +30,28 @@
 			remoteGlobalIDString = 321C4A722C82D33500B9BB81;
 			remoteInfo = MyMathLib;
 		};
+		326055432C87204A004DC00F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 321C4A6A2C82D33500B9BB81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 321C4A722C82D33500B9BB81;
+			remoteInfo = MyMathLib;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		326055452C87204A004DC00F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				326055422C87204A004DC00F /* MyMathLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		321C4A732C82D33500B9BB81 /* MyMathLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyMathLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +59,15 @@
 		321C4A7B2C82D33500B9BB81 /* MyMathLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMathLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321C4A802C82D33500B9BB81 /* MyMathLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMathLibTests.swift; sourceTree = "<group>"; };
 		321C4A8B2C82D54B00B9BB81 /* vDSPWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vDSPWrapper.m; sourceTree = "<group>"; };
+		326055102C872003004DC00F /* MyMathLibApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMathLibApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		326055122C872003004DC00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		326055142C872003004DC00F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		326055162C872003004DC00F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		326055192C872003004DC00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3260551B2C872005004DC00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3260551E2C872005004DC00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		326055202C872005004DC00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		326055462C8722C8004DC00F /* Benchmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Benchmark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +86,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3260550D2C872003004DC00F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326055412C87204A004DC00F /* MyMathLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,7 +102,9 @@
 			children = (
 				321C4A752C82D33500B9BB81 /* MyMathLib */,
 				321C4A7F2C82D33500B9BB81 /* MyMathLibTests */,
+				326055112C872003004DC00F /* MyMathLibApp */,
 				321C4A742C82D33500B9BB81 /* Products */,
+				326055402C87204A004DC00F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +113,7 @@
 			children = (
 				321C4A732C82D33500B9BB81 /* MyMathLib.framework */,
 				321C4A7B2C82D33500B9BB81 /* MyMathLibTests.xctest */,
+				326055102C872003004DC00F /* MyMathLibApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +133,28 @@
 				321C4A802C82D33500B9BB81 /* MyMathLibTests.swift */,
 			);
 			path = MyMathLibTests;
+			sourceTree = "<group>";
+		};
+		326055112C872003004DC00F /* MyMathLibApp */ = {
+			isa = PBXGroup;
+			children = (
+				326055122C872003004DC00F /* AppDelegate.swift */,
+				326055142C872003004DC00F /* SceneDelegate.swift */,
+				326055162C872003004DC00F /* ViewController.swift */,
+				326055182C872003004DC00F /* Main.storyboard */,
+				3260551B2C872005004DC00F /* Assets.xcassets */,
+				3260551D2C872005004DC00F /* LaunchScreen.storyboard */,
+				326055202C872005004DC00F /* Info.plist */,
+				326055462C8722C8004DC00F /* Benchmark.swift */,
+			);
+			path = MyMathLibApp;
+			sourceTree = "<group>";
+		};
+		326055402C87204A004DC00F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +207,25 @@
 			productReference = 321C4A7B2C82D33500B9BB81 /* MyMathLibTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3260550F2C872003004DC00F /* MyMathLibApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3260553D2C872005004DC00F /* Build configuration list for PBXNativeTarget "MyMathLibApp" */;
+			buildPhases = (
+				3260550C2C872003004DC00F /* Sources */,
+				3260550D2C872003004DC00F /* Frameworks */,
+				3260550E2C872003004DC00F /* Resources */,
+				326055452C87204A004DC00F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				326055442C87204A004DC00F /* PBXTargetDependency */,
+			);
+			name = MyMathLibApp;
+			productName = MyMathLibApp;
+			productReference = 326055102C872003004DC00F /* MyMathLibApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +240,9 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					321C4A7A2C82D33500B9BB81 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					3260550F2C872003004DC00F = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -168,6 +262,7 @@
 			targets = (
 				321C4A722C82D33500B9BB81 /* MyMathLib */,
 				321C4A7A2C82D33500B9BB81 /* MyMathLibTests */,
+				3260550F2C872003004DC00F /* MyMathLibApp */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +279,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3260550E2C872003004DC00F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3260551C2C872005004DC00F /* Assets.xcassets in Resources */,
+				3260551F2C872005004DC00F /* Base in Resources */,
+				3260551A2C872003004DC00F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +311,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3260550C2C872003004DC00F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326055172C872003004DC00F /* ViewController.swift in Sources */,
+				326055472C8722C8004DC00F /* Benchmark.swift in Sources */,
+				326055132C872003004DC00F /* AppDelegate.swift in Sources */,
+				326055152C872003004DC00F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -214,7 +330,31 @@
 			target = 321C4A722C82D33500B9BB81 /* MyMathLib */;
 			targetProxy = 321C4A7D2C82D33500B9BB81 /* PBXContainerItemProxy */;
 		};
+		326055442C87204A004DC00F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 321C4A722C82D33500B9BB81 /* MyMathLib */;
+			targetProxy = 326055432C87204A004DC00F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		326055182C872003004DC00F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				326055192C872003004DC00F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3260551D2C872005004DC00F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3260551E2C872005004DC00F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		321C4A832C82D33500B9BB81 /* Debug */ = {
@@ -461,6 +601,67 @@
 			};
 			name = Release;
 		};
+		326055372C872005004DC00F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3RGV59N989;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMathLibApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.companyname.MyMathLibApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		326055382C872005004DC00F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3RGV59N989;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMathLibApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.companyname.MyMathLibApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -487,6 +688,15 @@
 			buildConfigurations = (
 				321C4A892C82D33500B9BB81 /* Debug */,
 				321C4A8A2C82D33500B9BB81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3260553D2C872005004DC00F /* Build configuration list for PBXNativeTarget "MyMathLibApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				326055372C872005004DC00F /* Debug */,
+				326055382C872005004DC00F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
