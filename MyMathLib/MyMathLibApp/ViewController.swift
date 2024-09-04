@@ -8,32 +8,56 @@
 import UIKit
 import MyMathLib
 
+typealias BenchmarkFunc = () -> TimeInterval
+
+func DoBenchmark(benchmarkFunc: BenchmarkFunc) async -> TimeInterval {
+    return benchmarkFunc()
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
     var data: [(String, Double)] = []
     
+    let benchmarkSet = [
+        ("AddVVBenchmark", Benchmark.AddVVBenchmark),
+        ("AddVSBenchmark", Benchmark.AddVSBenchmark),
+        ("SubVVBenchmark", Benchmark.SubVVBenchmark),
+        ("SubVSBenchmark", Benchmark.SubVSBenchmark),
+        ("MultiplyVVBenchmark", Benchmark.MultiplyVVBenchmark),
+        ("MultiplyVSBenchmark", Benchmark.MultiplyVSBenchmark),
+        ("DevideVVBenchmark", Benchmark.DevideVVBenchmark),
+        ("DevideVSBenchmark", Benchmark.DevideVSBenchmark),
+        ("Log10Benchmark", Benchmark.Log10Benchmark),
+        ("SinBenchmark", Benchmark.SinBenchmark),
+        ("CosBenchmark", Benchmark.CosBenchmark),
+        ("FFTBenchmark", Benchmark.FFTBenchmark),
+        ("AbsBenchmark", Benchmark.AbsBenchmark),
+        ("ClampBenchmark", Benchmark.ClampBenchmark)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func Start(_ sender: Any) {
-        data.append(("AddVVBenchmark", Benchmark.AddVVBenchmark()))
-        data.append(("AddVSBenchmark", Benchmark.AddVSBenchmark()))
-        data.append(("SubVVBenchmark", Benchmark.SubVVBenchmark()))
-        data.append(("SubVSBenchmark", Benchmark.SubVSBenchmark()))
-        data.append(("MultiplyVVBenchmark", Benchmark.MultiplyVVBenchmark()))
-        data.append(("MultiplyVSBenchmark", Benchmark.MultiplyVSBenchmark()))
-        data.append(("DevideVVBenchmark", Benchmark.DevideVVBenchmark()))
-        data.append(("DevideVSBenchmark", Benchmark.DevideVSBenchmark()))
-        data.append(("Log10Benchmark", Benchmark.Log10Benchmark()))
-        data.append(("SinBenchmark", Benchmark.SinBenchmark()))
-        data.append(("CosBenchmark", Benchmark.CosBenchmark()))
-        data.append(("FFTBenchmark", Benchmark.FFTBenchmark()))
-        data.append(("AbsBenchmark", Benchmark.AbsBenchmark()))
-        data.append(("ClampBenchmark", Benchmark.ClampBenchmark()))
+        let activitiyViewController = ActivityViewController(message: "Benckmark...")
+        present(activitiyViewController, animated: true, completion: nil)
+        
+        data = []
         table.reloadData()
+        
+        Task {
+            for i in 0..<benchmarkSet.count {
+                let result = await DoBenchmark(benchmarkFunc: benchmarkSet[i].1)
+                
+                data.append((benchmarkSet[i].0, result))
+                table.reloadData()
+            }
+            
+            dismiss(animated: true)
+        }
     }
 }
 

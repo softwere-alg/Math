@@ -20,6 +20,7 @@
 		326055412C87204A004DC00F /* MyMathLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321C4A732C82D33500B9BB81 /* MyMathLib.framework */; };
 		326055422C87204A004DC00F /* MyMathLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 321C4A732C82D33500B9BB81 /* MyMathLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		326055472C8722C8004DC00F /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326055462C8722C8004DC00F /* Benchmark.swift */; };
+		326055492C888821004DC00F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326055482C888821004DC00F /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		3260551E2C872005004DC00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		326055202C872005004DC00F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		326055462C8722C8004DC00F /* Benchmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Benchmark.swift; sourceTree = "<group>"; };
+		326055482C888821004DC00F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				3260551D2C872005004DC00F /* LaunchScreen.storyboard */,
 				326055202C872005004DC00F /* Info.plist */,
 				326055462C8722C8004DC00F /* Benchmark.swift */,
+				326055482C888821004DC00F /* ActivityViewController.swift */,
 			);
 			path = MyMathLibApp;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				326055172C872003004DC00F /* ViewController.swift in Sources */,
 				326055472C8722C8004DC00F /* Benchmark.swift in Sources */,
 				326055132C872003004DC00F /* AppDelegate.swift in Sources */,
+				326055492C888821004DC00F /* ActivityViewController.swift in Sources */,
 				326055152C872003004DC00F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
