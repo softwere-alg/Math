@@ -286,6 +286,22 @@ class MyMathLibTests: XCTestCase {
         XCTAssertEqual(output[2], sqrt(16 + 25), accuracy: accuracy)
         XCTAssertEqual(output[3], sqrt(36 + 49), accuracy: accuracy)
     }
+    
+    func testClamp() throws {
+        let input: [Float] = [-20.0, 256.0, 100.0, 0.0]
+        var output: [Float] = Array(repeating: 0.0, count: input.count)
+        
+        input.withUnsafeBufferPointer { inPtr in
+            output.withUnsafeMutableBufferPointer { outPtr in
+                vDSPWrapper.vclamp(inPtr.baseAddress!, outPtr.baseAddress!, Int32(input.count), 0.0, 255.0)
+            }
+        }
+        
+        XCTAssertEqual(output[0], 0.0, accuracy: accuracy)
+        XCTAssertEqual(output[1], 255.0, accuracy: accuracy)
+        XCTAssertEqual(output[2], 100.0, accuracy: accuracy)
+        XCTAssertEqual(output[3], 0.0, accuracy: accuracy)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

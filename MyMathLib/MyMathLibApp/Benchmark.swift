@@ -165,6 +165,33 @@ class Benchmark {
         return Date().timeIntervalSince(dt)
     }
     
+    private static func BenchmarkProcess5(action: (UnsafePointer<Float>, UnsafeMutablePointer<Float>, Int) -> Void) -> TimeInterval {
+        var input1: [[Float]] = []
+        var output: [[Float]] = []
+        for _ in 0..<BenchmarkCount {
+            var tmp = CreateRandomList(n: VectorSize)
+            for i in 0..<tmp.count {
+                tmp[i] = tmp[i] * 500
+            }
+            
+            input1.append(tmp)
+            output.append(CreateZeroList(n: VectorSize))
+        }
+        
+        let dt = Date()
+
+        for i in 0..<BenchmarkCount
+        {
+            input1[i].withUnsafeBufferPointer { inPtr1 in
+                output[i].withUnsafeMutableBufferPointer { outPtr in
+                    action(inPtr1.baseAddress!, outPtr.baseAddress!, inPtr1.count)
+                }
+            }
+        }
+
+        return Date().timeIntervalSince(dt)
+    }
+    
     public static func AddVVBenchmark() -> TimeInterval {
         return BenchmarkProcess1 { in1, in2, in3, out1, length in
             vDSPWrapper.vadd(in1, in2, out1, Int32(length))
@@ -240,6 +267,12 @@ class Benchmark {
     public static func AbsBenchmark() -> TimeInterval {
         return BenchmarkProcess4 { in1, in2, out1, out2, length in
             vDSPWrapper.vabs(in1, in2, out1, Int32(length))
+        }
+    }
+    
+    public static func ClampBenchmark() -> TimeInterval {
+        return BenchmarkProcess5 { in1, out1, length in
+            vDSPWrapper.vclamp(in1, out1, Int32(length), 0.0, 255.0)
         }
     }
 }

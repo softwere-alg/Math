@@ -20,7 +20,8 @@ public partial class MainPage : ContentPage
 		"Log10Benchmark",
 		"SinBenchmark", "CosBenchmark",
 		"FFTBenchmark",
-		"AbsBenchmark"
+		"AbsBenchmark",
+		"ClampBenchmark"
 	];
 
 	public MainPage()

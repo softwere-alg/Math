@@ -98,6 +98,10 @@ void vabs(const float* inputReal, const float* inputImag, float* output, int len
     vDSP_zvabs(&input, 1, output, 1, length);
 }
 
+void vclamp(const float* input, float* output, int length, float min, float max) {
+    vDSP_vclip(input, 1, &min, &max, output, 1, length);
+}
+
 @implementation vDSPWrapper
 
 + (void) vadd:(const float*)input1 :(const float*)input2 :(float*)output :(int)length {
@@ -166,6 +170,10 @@ void vabs(const float* inputReal, const float* inputImag, float* output, int len
 
 + (void)vabs:(const float *)inputReal :(const float *)inputImag :(float *)output :(int)length {
     vabs(inputReal, inputImag, output, length);
+}
+
++ (void) vclamp:(const float*)input :(float*)output :(int)length :(float)min :(float)max {
+    vclamp(input, output, length, min, max);
 }
 
 @end

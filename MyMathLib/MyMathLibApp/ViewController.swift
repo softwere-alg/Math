@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         data.append(("CosBenchmark", Benchmark.CosBenchmark()))
         data.append(("FFTBenchmark", Benchmark.FFTBenchmark()))
         data.append(("AbsBenchmark", Benchmark.AbsBenchmark()))
+        data.append(("ClampBenchmark", Benchmark.ClampBenchmark()))
         table.reloadData()
     }
 }

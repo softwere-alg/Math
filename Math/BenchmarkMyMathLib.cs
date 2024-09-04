@@ -474,4 +474,36 @@ public static unsafe class BenchmarkMyMathLib
 
         return sw.ElapsedMilliseconds;
     }
+
+    public static long ClampBenchmark()
+    {
+        List<float[]> input1 = new List<float[]>();
+        List<float[]> input2 = new List<float[]>();
+        List<float> input3 = CreateRandomList<float>(BenchmarkCount);
+        List<float[]> output = new List<float[]>();
+        for (int i = 0; i < BenchmarkCount; i++)
+        {
+            // Clamp用に-500~500のランダムデータ作成
+            var tmp = CreateRandomList<float>(VectorSize);
+            for (int j = 0; j < tmp.Count; j++)
+            {
+                tmp[j] = tmp[j] * 500;
+            }
+
+            input1.Add(tmp.ToArray());
+            input2.Add(CreateRandomList<float>(VectorSize).ToArray());
+            output.Add(CreateZeroList<float>(VectorSize).ToArray());
+        }
+
+        return BenchmarkProcess(input1, input2, input3, output, (in1, in2, in3, out1) =>
+        {
+            fixed (float* i1 = in1)
+            {
+                fixed (float* o1 = out1)
+                {
+                    vDSPWrapper.VClamp(i1, o1, in1.Length, 0.0f, 255.0f);
+                }
+            }
+        });
+    }
 }

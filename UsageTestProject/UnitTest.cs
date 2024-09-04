@@ -248,4 +248,28 @@ public class Tests
         Assert.That(c[2].Real, Is.EqualTo((float)Math.Sqrt(16 + 25)));
         Assert.That(c[3].Real, Is.EqualTo((float)Math.Sqrt(36 + 49)));
     }
+
+    [Test]
+    public void Clamp()
+    {
+        var builder = Vector<float>.Build;
+
+        Vector<float> a = builder.DenseOfArray([-20, 256, 100, 0]);
+
+        Vector<float> c = a.Clamp(0, 255);
+        Assert.That(c[0], Is.EqualTo(0));
+        Assert.That(c[1], Is.EqualTo(255));
+        Assert.That(c[2], Is.EqualTo(100));
+        Assert.That(c[3], Is.EqualTo(0));
+    }
+}
+
+public static class SingleVectorExtension
+{
+    public static Vector<float> Clamp(this Vector<float> v, float min, float max)
+    {
+        return v.Map((float value) => {
+            return System.Math.Min(System.Math.Max(min, value), max);
+        });
+    }
 }

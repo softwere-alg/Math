@@ -157,5 +157,10 @@ namespace MyMathLibBinding
 		[Static]
 		[Export ("vabs::::")]
 		unsafe void VAbs (float* inputReal, float* inputImag, float* output, int length);
+
+		// +(void)vclamp:(const float *)input :(float *)output :(int)length :(float)min :(float)max;
+		[Static]
+		[Export ("vclamp:::::")]
+		unsafe void VClamp (float* input, float* output, int length, float min, float max);
 	}
 }

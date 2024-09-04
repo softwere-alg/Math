@@ -367,4 +367,34 @@ public static class BenchmarkMathNet
             out1[i] = Vector<Complex32>.Abs(in2);
         });
     }
+
+    public static long ClampBenchmark()
+    {
+        List<Vector<float>> input1 = new List<Vector<float>>();
+        List<Vector<float>> input2 = new List<Vector<float>>();
+        List<float> input3 = CreateRandomList<float>(BenchmarkCount);
+        List<Vector<float>> output = new List<Vector<float>>();
+        for (int i = 0; i < BenchmarkCount; i++)
+        {
+            // Clamp用に-500~500のランダムデータ作成
+            input1.Add(CreateRandomVector<float>(VectorSize) * 500);
+            input2.Add(CreateRandomVector<float>(VectorSize));
+            output.Add(CreateZeroVector<float>(VectorSize));
+        }
+
+        return BenchmarkProcess(input1, input2, input3, output, (in1, in2, in3, out1, i) =>
+        {
+            out1[i] = in1.Clamp(0.0f, 255.0f);
+        });
+    }
+}
+
+public static class SingleVectorExtension
+{
+    public static Vector<float> Clamp(this Vector<float> v, float min, float max)
+    {
+        return v.Map((float value) => {
+            return System.Math.Min(System.Math.Max(min, value), max);
+        });
+    }
 }

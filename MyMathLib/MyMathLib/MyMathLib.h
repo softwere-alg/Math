@@ -67,4 +67,6 @@ FOUNDATION_EXPORT const unsigned char MyMathLibVersionString[];
 
 + (void) vabs:(const float*)inputReal :(const float*)inputImag :(float*)output :(int)length;
 
++ (void) vclamp:(const float*)input :(float*)output :(int)length :(float)min :(float)max;
+
 @end
